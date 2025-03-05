@@ -49,32 +49,34 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero Carousel */
         .hero {
             background: linear-gradient(135deg, #0a0e13 0%, #1e2a38 100%);
             color: #ffffff;
-            padding: 150px 20px;
-            text-align: center;
             min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
             overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        .carousel-inner {
+            height: 600px;
+        }
+        .carousel-item {
             height: 100%;
-            background: radial-gradient(circle, rgba(163, 191, 250, 0.1) 0%, rgba(10, 14, 19, 0.8) 80%);
-            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(10, 14, 19, 0.9), rgba(30, 42, 56, 0.9));
+            transition: opacity 0.5s ease;
+        }
+        .carousel-item.active {
+            opacity: 1;
+        }
+        .carousel-item:not(.active) {
+            opacity: 0;
         }
         .hero-content {
-            position: relative;
-            z-index: 1;
+            text-align: center;
+            padding: 20px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
@@ -194,10 +196,58 @@
     </nav>
 
     <div class="hero" id="home">
-        <div class="container hero-content">
-            <h1>AIVC</h1>
-            <p>Investing in the Future of Artificial Intelligence</p>
-            <a href="#contact" class="btn btn-custom">Get in Touch</a>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="container hero-content">
+                        <h1>AIVC</h1>
+                        <p>Investing in the Future of Artificial Intelligence</p>
+                        <a href="#contact" class="btn btn-custom">Get in Touch</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="container hero-content">
+                        <h1>AI Innovation</h1>
+                        <p>Backing visionaries who redefine industries with AI</p>
+                        <a href="#portfolio" class="btn btn-custom">Explore Portfolio</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="container hero-content">
+                        <h1>Scalable Impact</h1>
+                        <p>Empowering startups to solve global challenges</p>
+                        <a href="#about" class="btn btn-custom">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                    <div class="container hero-content">
+                        <h1>Expert Network</h1>
+                        <p>Connecting founders with AI pioneers</p>
+                        <a href="#team" class="btn btn-custom">Meet the Team</a>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-item">
+                    <div class="container hero-content">
+                        <h1>Future Ready</h1>
+                        <p>Driving the next wave of tech breakthroughs</p>
+                        <a href="#contact" class="btn btn-custom">Join Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 
