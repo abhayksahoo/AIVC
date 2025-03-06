@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIVC - AI Venture Capital</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            background: #0f1419;
+            background: #1a1a1a;
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.8;
             margin: 0;
             overflow-x: hidden;
@@ -18,54 +19,56 @@
 
         /* Navbar */
         .navbar {
-            background: #0a0e13;
-            padding: 20px 0;
+            background: #1a1a1a;
+            padding: 25px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background 0.3s ease;
         }
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 1.5px;
-            transition: color 0.3s ease;
+            letter-spacing: 2px;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         .navbar-brand:hover {
-            color: #a3bffa;
+            color: #d3d3d3;
+            transform: scale(1.05);
         }
         .navbar-nav .nav-link {
-            color: #d0d7de;
+            color: #d3d3d3;
             font-size: 1.1rem;
-            font-weight: 500;
-            padding: 10px 20px;
-            transition: color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            padding: 10px 25px;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         .navbar-nav .nav-link:hover {
-            color: #a3bffa;
+            color: #ffffff;
             transform: translateY(-2px);
         }
 
         /* Hero Carousel */
         .hero {
-            min-height: 600px;
+            min-height: 100vh;
             position: relative;
-            background: linear-gradient(135deg, #0a0e13 0%, #1e2a38 100%);
+            background: #1a1a1a;
         }
         .carousel-fade .carousel-item {
-            height: 600px;
+            height: 100vh;
             display: block;
             opacity: 0;
-            transition: opacity 0.7s ease-in-out;
+            transition: opacity 0.8s ease-in-out;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(51, 51, 51, 0.85));
         }
         .carousel-fade .carousel-item.active {
             opacity: 1;
         }
         .carousel-item {
-            background: linear-gradient(135deg, rgba(10, 14, 19, 0.9), rgba(30, 42, 56, 0.9));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -73,92 +76,102 @@
         }
         .hero-content {
             color: #ffffff;
-            padding: 20px;
+            padding: 40px;
+            max-width: 900px;
         }
         .hero h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            color: #ffffff;
         }
         .hero p {
-            font-size: 1.6rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #d0d7de;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            color: #d3d3d3;
+            font-weight: 400;
         }
         .btn-custom {
-            background: #4f46e5;
+            background: #333333;
             color: #ffffff;
             padding: 15px 40px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #d3d3d3;
+            border-radius: 0;
+            text-transform: uppercase;
+            transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease;
         }
         .btn-custom:hover {
-            background: #6366f1;
+            background: #ffffff;
+            color: #1a1a1a;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        .carousel-control-prev, .carousel-control-next {
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            opacity: 0.8;
         }
 
         /* Sections */
         .section {
-            padding: 100px 0;
-            background: #0f1419;
-            transition: opacity 0.5s ease;
+            padding: 120px 0;
+            background: #1a1a1a;
         }
         .section h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 800;
             margin-bottom: 40px;
             color: #ffffff;
             text-align: center;
             position: relative;
+            text-transform: uppercase;
         }
         .section h2::after {
             content: '';
-            width: 50px;
-            height: 3px;
-            background: #4f46e5;
+            width: 60px;
+            height: 4px;
+            background: #d3d3d3;
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
         }
         .section p {
-            font-size: 1.2rem;
-            max-width: 900px;
+            font-size: 1.3rem;
+            max-width: 1000px;
             margin: 0 auto;
-            color: #d0d7de;
+            color: #d3d3d3;
             text-align: center;
+            font-weight: 400;
         }
 
         /* Footer */
         footer {
-            background: #0a0e13;
-            color: #d0d7de;
-            padding: 50px 0;
+            background: #1a1a1a;
+            color: #d3d3d3;
+            padding: 60px 0;
             text-align: center;
             font-size: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         footer p {
             margin: 0;
+            font-weight: 400;
         }
 
         /* Links */
         a {
-            color: #a3bffa;
+            color: #d3d3d3;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         a:hover {
-            color: #6366f1;
+            color: #ffffff;
         }
     </style>
 </head>
